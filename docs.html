@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Rextro</title>
+    <meta name="description"
+        content="Full command reference for Rextro Discord bot — every command, every module, accurate from the source code.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="Rextro Logo" class="brand-logo">
+                <span>Rextro</span>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#ai" class="nav-link">AI Tools</a>
+                <a href="index.html#automod" class="nav-link">AutoMod</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="docs.html" class="nav-link active-nav">Docs</a>
+                <a href="#" class="btn btn-primary nav-btn"><i class="fa-brands fa-discord"></i> Invite Bot</a>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <div class="sidebar-inner">
+                <div class="nav-group">
+                    <h4>Getting Started</h4>
+                    <ul>
+                        <li><a href="#quickstart">Quick Start</a></li>
+                        <li><a href="#permissions">Permissions</a></li>
+                        <li><a href="#modpanel">Moderation Panel</a></li>
+                    </ul>
+                </div>
+                <div class="nav-group">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Security</h4>
+                    <ul>
+                        <li><a href="#automod">Auto-Moderation</a></li>
+                        <li><a href="#antiphish">Anti-Phishing</a></li>
+                        <li><a href="#auditlog">Audit Logging</a></li>
+                        <li><a href="#lockdown">Emergency Lockdown</a></li>
+                        <li><a href="#shadowrealm">Shadow Realm</a></li>
+                        <li><a href="#sniper">Message Sniper</a></li>
+                        <li><a href="#interrogation">Interrogation Room</a></li>
+                    </ul>
+                </div>
+                <div class="nav-group">
+                    <h4><i class="fa-solid fa-users"></i> Community</h4>
+                    <ul>
+                        <li><a href="#levels">XP & Levels</a></li>
+                        <li><a href="#welcome">Welcome Images</a></li>
+                        <li><a href="#reactionroles">Reaction Roles</a></li>
+                        <li><a href="#suggestions">Suggestions & Polls</a></li>
+                        <li><a href="#announcements">Announcements</a></li>
+                        <li><a href="#applications">Staff Applications</a></li>
+                    </ul>
+                </div>
+                <div class="nav-group">
+                    <h4><i class="fa-solid fa-microchip"></i> Utility & AI</h4>
+                    <ul>
+                        <li><a href="#tickets">Support Tickets</a></li>
+                        <li><a href="#imagine">AI Image Generation</a></li>
+                        <li><a href="#smartchat">Smart Chat AI</a></li>
+                        <li><a href="#dynvoice">Dynamic Voice</a></li>
+                        <li><a href="#analytics">Server Analytics</a></li>
+                        <li><a href="#temproles">Temp Roles</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main class="docs-main">
+
+            <!-- Quick Start -->
+            <section id="quickstart">
+                <h1><i class="fa-solid fa-rocket gradient-text"></i> Rextro Documentation</h1>
+                <p>Complete command reference for all <strong>25+ modules</strong> in Rextro. Every command listed here
+                    reflects the actual implemented code.</p>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div><strong>All commands are Discord Slash Commands</strong> — type <code>/</code> in any channel
+                        to see available commands. No prefix needed.</div>
+                </div>
+            </section>
+
+            <section id="permissions" class="mt-4">
+                <h2><i class="fa-solid fa-key gradient-text"></i> Required Permissions</h2>
+                <div class="docs-table-wrap">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Permission</th>
+                                <th>Required For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Administrator <em>(recommended)</em></td>
+                                <td>Setup commands, Emergency lockdown, AutoMod full config</td>
+                            </tr>
+                            <tr>
+                                <td>Manage Messages</td>
+                                <td>AutoMod, Sniper, Purge, Announcements</td>
+                            </tr>
+                            <tr>
+                                <td>Manage Roles</td>
+                                <td>Reaction Roles (<code>/rolepanel</code>), Temp Roles, Level Rewards</td>
+                            </tr>
+                            <tr>
+                                <td>Manage Channels</td>
+                                <td>Lockdown (<code>/emergency</code>), Dynamic Voice (<code>/setup_voice</code>)</td>
+                            </tr>
+                            <tr>
+                                <td>Ban Members</td>
+                                <td>Shadow Realm (<code>/banish</code>), Moderation Panel</td>
+                            </tr>
+                            <tr>
+                                <td>Moderate Members</td>
+                                <td>Moderation Panel (<code>/modpanel</code>), Timeout commands</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="modpanel" class="mt-4">
+                <h2><i class="fa-solid fa-hammer gradient-text"></i> Moderation Panel</h2>
+                <p>Rextro's interactive moderation UI — all common mod actions available without memorizing commands.
+                </p>
+                <div class="code-block">
+                    <div class="code-header">Command</div>
+                    <pre><code>/modpanel</code></pre>
+                </div>
+                <p>Opens a panel with a <strong>user select dropdown</strong> to choose a target member, then provides
+                    action buttons including:</p>
+                <ul>
+                    <li>⏱️ <strong>Timeout 10m</strong> — Timeout the user for 10 minutes</li>
+                    <li>⏲️ <strong>Timeout 1h</strong> — Timeout the user for 1 hour</li>
+                    <li>⏳ <strong>Remove Timeout</strong> — Lift an active timeout</li>
+                    <li>👢 <strong>Kick User</strong> — Kick from server</li>
+                    <li>🔨 <strong>Ban User</strong> — Permanently ban</li>
+                    <li>🔒 <strong>Lock Channel</strong> — Prevent @everyone from sending in this channel</li>
+                    <li>🔓 <strong>Unlock Channel</strong> — Restore permissions</li>
+                    <li>🧹 <strong>Purge Messages</strong> — Opens a modal to enter 1–100 messages to delete</li>
+                </ul>
+                <div class="code-block">
+                    <div class="code-header">Also available as standalone</div>
+                    <pre><code>/purge [amount]   — Bulk delete 1–100 messages directly</code></pre>
+                </div>
+            </section>
+
+            <!-- SECURITY -->
+            <div class="docs-category-header blue mt-4">
+                <i class="fa-solid fa-shield-halved"></i> Security & Moderation
+            </div>
+
+            <section id="automod" class="mt-4">
+                <h2><i class="fa-solid fa-robot gradient-text"></i> Auto-Moderation</h2>
+                <p>Rextro's most powerful module — 14 independent filters that run silently on every message and user
+                    action.</p>
+                <div class="code-block">
+                    <div class="code-header">Command</div>
+                    <pre><code>/automod   — Open the interactive AutoMod Dashboard (Admin only)</code></pre>
+                </div>
+                <p>The dashboard provides a dropdown menu with the following options:</p>
+                <ul>
+                    <li>⚙️ <strong>View Settings</strong> — See the current state of all 14 filters</li>
+                    <li>🎚️ <strong>Toggle Filters</strong> — Enable/disable individual filters</li>
+                    <li>🛡️ <strong>Deploy Native Rules</strong> — Deploy Discord's native AutoMod rules</li>
+                    <li>🚀 <strong>Bulk Deploy Rules</strong> — Deploy 10 rules at once for badge progress</li>
+                    <li>🗑️ <strong>Clear Native Rules</strong> — Remove all deployed native rules</li>
+                </ul>
+                <div class="docs-table-wrap">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Filter</th>
+                                <th>What it catches</th>
+                                <th>Default</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Anti-Spam</strong></td>
+                                <td>5+ messages in 5 seconds from the same user</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Duplicate</strong></td>
+                                <td>Same message sent 3+ times in a row</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Invite</strong></td>
+                                <td>Discord invite links (discord.gg, discord.com/invite)</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Caps</strong></td>
+                                <td>Messages with 70%+ uppercase (min 10 chars)</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Mass Mention</strong></td>
+                                <td>5+ users or roles pinged in a single message</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Emoji Spam</strong></td>
+                                <td>10+ emojis in a single message</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Ghost Ping</strong></td>
+                                <td>Logs pings in messages that get deleted within 5 minutes</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Zalgo</strong></td>
+                                <td>Glitchy/corrupted Unicode text (50%+ zalgo chars)</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Selfbot</strong></td>
+                                <td>User-posted embeds (a sign of selfbot activity)</td>
+                                <td><span class="status enabled">ON</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Links</strong></td>
+                                <td>All external URLs (with whitelist support)</td>
+                                <td><span class="status disabled">OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Image</strong></td>
+                                <td>Attachments/images outside allowed channels</td>
+                                <td><span class="status disabled">OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Hoisting</strong></td>
+                                <td>Nicknames starting with special chars (!.-+"*)</td>
+                                <td><span class="status disabled">OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anti-Status Invite</strong></td>
+                                <td>Invite links in user status/activities</td>
+                                <td><span class="status disabled">OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banned Words</strong></td>
+                                <td>Custom word blacklist (uses word boundaries)</td>
+                                <td><span class="status disabled">OFF</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div><strong>Auto-Punishment:</strong> After <strong>3 violations</strong> within an hour, Rextro
+                        automatically mutes the offender for 10 minutes. The threshold, action, and duration are all
+                        configurable.</div>
+                </div>
+            </section>
+
+            <section id="antiphish" class="mt-4">
+                <h2><i class="fa-solid fa-fish-fins gradient-text"></i> Anti-Phishing Shield</h2>
+                <p>Two-layer protection: Real-time phishing link detection AND an account age gate to stop raid bots
+                    before they enter.</p>
+                <p><strong>🛡️ Anti-Raid Gate:</strong> Any account less than <strong>24 hours old</strong> is
+                    automatically kicked on join. They receive a DM explaining why.</p>
+                <p><strong>🔗 Link Scanner:</strong> Every message is scanned for known phishing patterns — Discord
+                    Nitro scams, Steam scams, fake gift links. On detection, the message is deleted and the user is
+                    <strong>timed out for 24 hours</strong>.</p>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>Anti-phishing runs automatically — no command needed. It's always active as a passive
+                        background listener.</div>
+                </div>
+            </section>
+
+            <section id="auditlog" class="mt-4">
+                <h2><i class="fa-solid fa-scroll gradient-text"></i> Audit Logging</h2>
+                <p>Every important server action is logged automatically to a configured channel. Uses Discord's
+                    built-in audit log events.</p>
+                <p><strong>Logged Events Include:</strong> Member joins/leaves, message edits and deletes, role changes,
+                    channel modifications, kicks, bans, timeouts, and voice channel movements.</p>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>Configure the log channel in your server settings. Rextro logs events Discord's own audit log
+                        sometimes misses, like detailed message content before deletion.</div>
+                </div>
+            </section>
+
+            <section id="lockdown" class="mt-4">
+                <h2><i class="fa-solid fa-lock gradient-text"></i> Emergency Lockdown</h2>
+                <p>A one-click emergency panel that can instantly lock every text channel in your server against raids
+                    or critical incidents.</p>
+                <div class="code-block">
+                    <div class="code-header">Command</div>
+                    <pre><code>/emergency   — Open the Emergency Anti-Raid Console (Admin only)</code></pre>
+                </div>
+                <p>The panel provides three instant actions:</p>
+                <ul>
+                    <li>🔴 <strong>LOCKDOWN EVERYTHING</strong> — Removes @everyone's ability to send messages in ALL
+                        text channels simultaneously</li>
+                    <li>🟢 <strong>Lift Lockdown</strong> — Restores all channel permissions back to normal</li>
+                    <li>📱 <strong>Enable Highest Verification</strong> — Cranks the server verification level to
+                        require a verified phone number — stops raid bots cold</li>
+                </ul>
+            </section>
+
+            <section id="shadowrealm" class="mt-4">
+                <h2><i class="fa-solid fa-user-slash gradient-text"></i> Shadow Realm</h2>
+                <p>Banish a problematic user to a secret isolation channel. They remain in the server, can see channels,
+                    but are stripped of all roles. Their messages in <code>#the-shadow-realm</code> are deleted and
+                    mocked with dark flavour text.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands (requires Ban Members permission)</div>
+                    <pre><code>/banish [user] [reason?]  — Strip roles & isolate user in #the-shadow-realm
+/unbanish [user]          — Restore all original roles and free the user</code></pre>
+                </div>
+                <p>The bot automatically creates the <strong>"Banished"</strong> role and
+                    <strong>#the-shadow-realm</strong> channel if they don't already exist. Original roles are cached in
+                    memory and fully restored on <code>/unbanish</code>.</p>
+            </section>
+
+            <section id="sniper" class="mt-4">
+                <h2><i class="fa-solid fa-crosshairs gradient-text"></i> Message Sniper</h2>
+                <p>Recover the last deleted or edited message in any channel. Great for catching rule-breakers who
+                    delete evidence.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands</div>
+                    <pre><code>/snipe       — Show the last deleted message in this channel
+/editsnipe   — Show the before & after of the last edited message</code></pre>
+                </div>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>Snipe data is stored in memory only — it clears when the bot restarts. Only one message per
+                        channel is cached at a time.</div>
+                </div>
+            </section>
+
+            <section id="interrogation" class="mt-4">
+                <h2><i class="fa-solid fa-user-secret gradient-text"></i> Interrogation Room</h2>
+                <p>A custom captcha/verification system. New members are locked in an interrogation channel until they
+                    correctly answer a question you set. It auto-assigns the <strong>"Unverified"</strong> role blocking
+                    all channels until they pass.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands (Admin only)</div>
+                    <pre><code>/setup_interrogation         — Opens a modal to set the question & correct answer
+/spawn_interrogation         — Posts the "Begin Interrogation" button in the channel</code></pre>
+                </div>
+                <ul>
+                    <li>On joining, new members auto-receive the <strong>Unverified</strong> role (blocking all
+                        channels).</li>
+                    <li>They click <strong>"Begin Interrogation 🕵️"</strong> in the designated channel.</li>
+                    <li>A modal pops up with your custom question. Correct answer → role removed → access granted.</li>
+                </ul>
+            </section>
+
+            <!-- COMMUNITY -->
+            <div class="docs-category-header purple mt-4">
+                <i class="fa-solid fa-users"></i> Community & Engagement
+            </div>
+
+            <section id="levels" class="mt-4">
+                <h2><i class="fa-solid fa-ranking-star gradient-text"></i> XP & Levels System</h2>
+                <p>Automated XP tracking that rewards members for chatting. Members earn <strong>20 XP per
+                        message</strong> with level progression following the formula: <code>Level = 0.1 × √XP</code>.
+                </p>
+                <div class="code-block">
+                    <div class="code-header">Commands</div>
+                    <pre><code>/rank [member?]           — View a rank card with Level, XP, and a progress bar
+/setup_rewards [level] [role] — Auto-grant a Role when users reach a Level (Admin)</code></pre>
+                </div>
+                <p>The rank card displays a visual <strong>10-box progress bar</strong> (🟦⬛) showing progress to the
+                    next level, total XP, and member avatar. Level data is saved to <code>levels.json</code> and
+                    auto-synced every 2 minutes.</p>
+            </section>
+
+            <section id="welcome" class="mt-4">
+                <h2><i class="fa-solid fa-image gradient-text"></i> Welcome Images</h2>
+                <p>Automatically sends a dynamically generated image card when a new member joins — featuring their
+                    circular avatar, username, server name, and member count.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands</div>
+                    <pre><code>/test_welcome   — Generate and preview your own welcome card (Admin only)</code></pre>
+                </div>
+                <p>The welcome card is generated with <strong>Pillow (PIL)</strong> and automatically posts to the
+                    server's system channel, or any channel named <code>#welcome</code> or <code>#general</code>. Drop a
+                    <code>welcome_bg.png</code> file in the bot folder to use a custom background.</p>
+            </section>
+
+            <section id="reactionroles" class="mt-4">
+                <h2><i class="fa-solid fa-face-smile gradient-text"></i> Reaction Roles</h2>
+                <p>Deploy a role-selection panel using Discord's native <strong>Select Menu</strong> UI. Members pick
+                    their roles from a dropdown — selections toggle on/off (self-removing on second pick).</p>
+                <div class="code-block">
+                    <div class="code-header">Command (Admin only)</div>
+                    <pre><code>/rolepanel [role1] [role2?] [role3?] [role4?] [role5?]
+ — Create a role selection panel with up to 5 roles</code></pre>
+                </div>
+                <p>Supports multi-select — members can pick multiple roles in a single interaction. Each role can be
+                    toggled on or off independently.</p>
+            </section>
+
+            <section id="suggestions" class="mt-4">
+                <h2><i class="fa-solid fa-lightbulb gradient-text"></i> Suggestions & Polls</h2>
+                <p>A structured system for community feedback and voting.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands</div>
+                    <pre><code>/suggest [idea]              — Submit a suggestion (opens a modal form)
+/approve [id] [reason?]     — Approve a suggestion (requires Manage Messages)
+/deny [id] [reason]         — Deny a suggestion with a reason
+/poll [question]            — Create a simple Yes/No poll with voting buttons
+/endpoll [message_id]       — Close a poll and display the final vote tally</code></pre>
+                </div>
+            </section>
+
+            <section id="announcements" class="mt-4">
+                <h2><i class="fa-solid fa-bullhorn gradient-text"></i> Announcements</h2>
+                <p>A full-featured announcement builder that opens an interactive modal. No need to manually build
+                    embeds.</p>
+                <div class="code-block">
+                    <div class="code-header">Command (Admin only)</div>
+                    <pre><code>/announce   — Opens the announcement builder modal</code></pre>
+                </div>
+                <p>The modal prompts for: <strong>Title</strong>, <strong>Message Body</strong> (up to 4000 chars), an
+                    optional <strong>Image URL</strong>, and a <strong>Ping type</strong> (<code>everyone</code>,
+                    <code>here</code>, or <code>none</code>). The result is a beautifully formatted embed sent to the
+                    current channel.</p>
+            </section>
+
+            <section id="applications" class="mt-4">
+                <h2><i class="fa-solid fa-file-pen gradient-text"></i> Staff Applications</h2>
+                <p>A complete staff application and review system. Members apply through Discord's native modal UI and
+                    staff receive formatted submissions.</p>
+                <div class="code-block">
+                    <div class="code-header">Command (Admin only)</div>
+                    <pre><code>/setup_applications [review_channel]
+ — Deploys an "Apply Now" button panel. Submissions are sent to review_channel.</code></pre>
+                </div>
+                <p>The application modal asks 3 questions: <strong>Age</strong>, <strong>Why do you want to be
+                        staff?</strong>, and <strong>Previous experience?</strong>. Staff in the review channel can
+                    click <strong>Approve</strong> or <strong>Deny</strong> — the applicant is automatically DM'd the
+                    result.</p>
+            </section>
+
+            <!-- UTILITY & AI -->
+            <div class="docs-category-header green mt-4">
+                <i class="fa-solid fa-microchip"></i> Utility & AI
+            </div>
+
+            <section id="tickets" class="mt-4">
+                <h2><i class="fa-solid fa-ticket gradient-text"></i> Support Tickets</h2>
+                <p>Professional-grade support ticket system with private channels, automatic transcripts, and delivery
+                    to the member's DMs.</p>
+                <div class="code-block">
+                    <div class="code-header">Command (Admin only)</div>
+                    <pre><code>/setup_tickets   — Deploy the "Create Ticket" button panel in this channel</code></pre>
+                </div>
+                <ul>
+                    <li>Clicking <strong>"Create Ticket 🎫"</strong> creates a private channel named
+                        <code>ticket-[username]</code> under a <strong>Tickets</strong> category.</li>
+                    <li>Each ticket has a <strong>"Close & Save Transcript 🔒"</strong> button — clicking it generates a
+                        <code>.txt</code> transcript of all messages and DMs it to the ticket creator.</li>
+                    <li>The channel is deleted 5 seconds after closing.</li>
+                    <li>Prevents duplicate open tickets — if a user already has an open ticket, they're directed to it.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="imagine" class="mt-4">
+                <h2><i class="fa-solid fa-wand-magic-sparkles gradient-text"></i> AI Image Generation</h2>
+                <p>Tap into <strong>Pollinations AI</strong> to generate stunning 1024×1024 images from a text prompt
+                    with 6 distinct art styles.</p>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <div><strong>Powered by Pollinations AI</strong> — Images are generated at 1024×1024 resolution in
+                        approximately 5 seconds.</div>
+                </div>
+                <div class="code-block">
+                    <div class="code-header">Command</div>
+                    <pre><code>/imagine   — Opens the Image Studio with a style selection panel</code></pre>
+                </div>
+                <div class="docs-table-wrap">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Style</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🎨 <strong>Artistic</strong></td>
+                                <td>Impressionist oil painting style</td>
+                            </tr>
+                            <tr>
+                                <td>📷 <strong>Realistic</strong></td>
+                                <td>Hyperrealistic photograph</td>
+                            </tr>
+                            <tr>
+                                <td>🌌 <strong>Fantasy</strong></td>
+                                <td>Epic fantasy illustration</td>
+                            </tr>
+                            <tr>
+                                <td>🤖 <strong>Sci-Fi</strong></td>
+                                <td>Futuristic concept art</td>
+                            </tr>
+                            <tr>
+                                <td>🦸 <strong>Anime</strong></td>
+                                <td>Japanese anime illustration style</td>
+                            </tr>
+                            <tr>
+                                <td>✏️ <strong>Sketch</strong></td>
+                                <td>Detailed pencil/charcoal drawing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>After selecting a style, a modal appears for you to type your prompt (max 300 chars). The bot
+                    generates the image and posts it with a <strong>🔄 Regenerate</strong> button for variations.
+                    Retries automatically up to 3 times if the server is busy.</p>
+            </section>
+
+            <section id="smartchat" class="mt-4">
+                <h2><i class="fa-solid fa-brain gradient-text"></i> Smart Chat AI</h2>
+                <p>An AI chatbot powered by <strong>Google Gemini 2.5-flash</strong> that maintains conversation history
+                    per channel and adapts both its tone and response length to match the user.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands</div>
+                    <pre><code>/set_ai_channel   — Set the current channel as the dedicated AI chat zone (Admin)
+                  — In this channel, Rextro responds to EVERY message automatically.
+/reset_ai         — Clear the AI's conversation memory for this channel (wipe history)</code></pre>
+                </div>
+                <p>Outside of the designated channel, members can still chat with the AI by <strong>@mentioning the
+                        bot</strong> in any channel. Conversation history is maintained per-channel until
+                    <code>/reset_ai</code> is called or the bot restarts.</p>
+            </section>
+
+            <section id="dynvoice" class="mt-4">
+                <h2><i class="fa-solid fa-microphone-lines gradient-text"></i> Dynamic Voice Channels</h2>
+                <p>A "Join to Create" system — members join a hub voice channel and instantly get their own private
+                    temporary room, named <code>[username]'s Room</code>. The room auto-deletes when empty.</p>
+                <div class="code-block">
+                    <div class="code-header">Commands (Admin only)</div>
+                    <pre><code>/setup_voice   — Creates a "🎙️ Temp Voice Channels" category with a
+               "➕ Join to Create" hub channel automatically</code></pre>
+                </div>
+                <p>Each created room gets a control panel embed with <strong>Lock 🔒</strong> and <strong>Unlock
+                        🔓</strong> buttons. Only the room owner (or admins) can control it.</p>
+            </section>
+
+            <section id="analytics" class="mt-4">
+                <h2><i class="fa-solid fa-chart-line gradient-text"></i> Server Analytics</h2>
+                <p>Generate a real-time server health report from Discord's cache data — no database required.</p>
+                <div class="code-block">
+                    <div class="code-header">Command (Admin only)</div>
+                    <pre><code>/analytics   — Generate a server health report with visual activity bar</code></pre>
+                </div>
+                <p>The report includes: <strong>Total Members / Humans / Bots / Currently Online</strong>, <strong>New
+                        Joins in the last 7 days</strong>, <strong>Channel & Role counts</strong>, <strong>Server Boost
+                        tier</strong>, and a <strong>🟩 visual activity ratio bar</strong> showing online vs. total
+                    members.</p>
+            </section>
+
+            <section id="temproles" class="mt-4">
+                <h2><i class="fa-solid fa-clock-rotate-left gradient-text"></i> Temporary Roles</h2>
+                <p>Assign a role that automatically removes itself after a specified duration. Runs a background check
+                    every minute — works even after bot restarts (data saved to <code>temproles.json</code>).</p>
+                <div class="code-block">
+                    <div class="code-header">Command (requires Manage Roles)</div>
+                    <pre><code>/temprole [member] [role] [duration]
+ — Duration format: 30m, 12h, 3d, 1w
+ — Examples: /temprole @User @EventAccess 24h</code></pre>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Rextro Logo" class="brand-logo-footer"> Rextro
+            </div>
+            <div class="footer-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#ai">AI Tools</a>
+                <a href="docs.html">Documentation</a>
+                <a href="index.html#about">About</a>
+            </div>
+            <p class="copyright">Designed and developed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i>
+                by <strong>Adnan T S</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

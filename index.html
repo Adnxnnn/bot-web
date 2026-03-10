@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rextro - The Ultimate Discord Management System</title>
+    <meta name="description"
+        content="Stop juggling multiple bots. Rextro is the only one you'll need. AI-powered, security-focused, and community-ready. Built by Adnan T S.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="Rextro Logo" class="brand-logo">
+                <span>Rextro</span>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#ai" class="nav-link">AI Tools</a>
+                <a href="index.html#automod" class="nav-link">AutoMod</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="docs.html" class="nav-link">Docs</a>
+                <a href="#" class="btn btn-primary nav-btn"><i class="fa-brands fa-discord"></i> Invite Bot</a>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <div class="badge"><i class="fa-solid fa-bolt"></i> All-in-One Powerhouse</div>
+            <h1>Supercharge your server. <span class="gradient-text">Elevate your community.</span></h1>
+            <p>Stop juggling multiple bots. Rextro is the <strong>only one you'll need</strong> — from cutting-edge AI
+                to fortress-grade security, every feature is at your fingertips.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary btn-large glow-btn">
+                    <i class="fa-brands fa-discord"></i> Add to Discord
+                </a>
+                <a href="docs.html" class="btn btn-secondary btn-large">
+                    View Documentation
+                </a>
+            </div>
+            <div class="hero-pills">
+                <span class="pill"><i class="fa-solid fa-shield-halved"></i> AutoMod</span>
+                <span class="pill"><i class="fa-solid fa-star"></i> Levels</span>
+                <span class="pill"><i class="fa-solid fa-robot"></i> Smart AI</span>
+                <span class="pill"><i class="fa-solid fa-ticket"></i> Tickets</span>
+                <span class="pill"><i class="fa-solid fa-image"></i> AI Art</span>
+            </div>
+        </div>
+        <div class="hero-visual reveal fade-up glow-container">
+            <div class="mockup-window glass-panel">
+                <div class="mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mockup-title">Rextro Command Center</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="command-input">/imagine prompt: a cyberpunk city at night, 8k</div>
+                    <div class="embed-preview ai-embed">
+                        <div class="embed-title"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Image Generated!
+                        </div>
+                        <div class="ai-image-preview"></div>
+                        <div class="embed-desc">Your image has been generated. React with ✨ to generate a variation.
+                        </div>
+                    </div>
+                    <div class="command-input" style="margin-top: 0.75rem;">/modpanel</div>
+                    <div class="embed-preview">
+                        <div class="embed-title"><i class="fa-solid fa-shield-halved"></i> Moderation Panel</div>
+                        <div class="button-group-mockup">
+                            <div class="btn-mockup danger">Ban</div>
+                            <div class="btn-mockup danger">Timeout</div>
+                            <div class="btn-mockup secondary">View Logs</div>
+                            <div class="btn-mockup secondary">Lockdown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section reveal">
+        <div class="stats-grid">
+            <div class="stat-card glass-panel">
+                <i class="fa-solid fa-server stat-icon"></i>
+                <h3 class="stat-number" data-target="15000">0</h3>
+                <p>Active Servers</p>
+            </div>
+            <div class="stat-card glass-panel">
+                <i class="fa-solid fa-users stat-icon"></i>
+                <h3 class="stat-number" data-target="2500000">0</h3>
+                <p>Users Protected</p>
+            </div>
+            <div class="stat-card glass-panel">
+                <i class="fa-solid fa-shield-check stat-icon"></i>
+                <h3 class="stat-number" data-target="25">0</h3>
+                <p>Powerful Modules</p>
+            </div>
+            <div class="stat-card glass-panel">
+                <i class="fa-solid fa-bolt stat-icon"></i>
+                <h3 class="stat-number" data-target="99.9">0</h3>
+                <p>% Uptime Guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features by Category -->
+    <section id="features" class="features">
+        <div class="section-header reveal">
+            <h2>Everything Your Server <span class="gradient-text">Will Ever Need</span></h2>
+            <p>One bot. Three powerful pillars. 25+ modules ready to deploy instantly.</p>
+        </div>
+
+        <!-- Security & Moderation -->
+        <div class="category-block reveal">
+            <div class="category-label blue">
+                <i class="fa-solid fa-shield-halved"></i> Security & Moderation
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper blue"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Smart AutoMod</h3>
+                    <p>Proactively filters spam, excessive mentions, harmful language, and invite link abuse — all
+                        without lifting a finger.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper red"><i class="fa-solid fa-fish-fins"></i></div>
+                    <h3>Anti-Phishing Shield</h3>
+                    <p>Real-time scanning and instant removal of malicious and phishing links before they can harm a
+                        single member.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper orange"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>Audit Logging</h3>
+                    <p>A detailed, searchable log of every important server event and staff action. Full accountability
+                        for every action taken.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper yellow"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Instant Lockdown</h3>
+                    <p>Instantly restrict messaging across specified channels during raids or critical events with a
+                        single command.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper cyan"><i class="fa-solid fa-user-slash"></i></div>
+                    <h3>Shadow Realm</h3>
+                    <p>Silently isolate problematic users from the rest of the server — they can see channels but no one
+                        sees them.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper pink"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h3>Message Sniper</h3>
+                    <p>Never lose important context. Recover and view recently deleted messages with ease — staff
+                        verified.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community & Engagement -->
+        <div class="category-block reveal" style="margin-top: 5rem;">
+            <div class="category-label purple">
+                <i class="fa-solid fa-users"></i> Community & Engagement
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper purple"><i class="fa-solid fa-ranking-star"></i></div>
+                    <h3>XP & Levels System</h3>
+                    <p>Reward member activity and participation with XP, leaderboards, and automatic role progression as
+                        they level up.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper pink"><i class="fa-solid fa-image"></i></div>
+                    <h3>Welcome Images</h3>
+                    <p>Greet every new member with a stunning, dynamically generated welcome banner that's fully
+                        customizable.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper blue"><i class="fa-solid fa-face-smile"></i></div>
+                    <h3>Reaction Roles</h3>
+                    <p>Let members self-assign roles by reacting to a message — perfect for color selection, pronouns,
+                        or channel access.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper yellow"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Suggestions & Polls</h3>
+                    <p>Create dedicated channels for member feedback. Staff can formally approve, deny, or implement
+                        ideas with one click.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper orange"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Announcements</h3>
+                    <p>Send beautifully formatted, pingable embed announcements without needing to touch a complex JSON
+                        builder.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper cyan"><i class="fa-solid fa-user-secret"></i></div>
+                    <h3>Interrogation Room</h3>
+                    <p>Custom verification system — new members answer a secret question before gaining access. Bots and
+                        raiders never get in.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Utility & AI -->
+        <div class="category-block reveal" style="margin-top: 5rem;">
+            <div class="category-label green">
+                <i class="fa-solid fa-microchip"></i> Utility & AI
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper green"><i class="fa-solid fa-ticket"></i></div>
+                    <h3>Ticket System</h3>
+                    <p>Professional-grade support with private ticket rooms, transcripts, staff claiming, and automated
+                        closures.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper purple ai-glow"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>AI Image Generation</h3>
+                    <p>Tap into AI to create unique artwork from a text prompt with <code>/imagine</code>. Incredibly
+                        powerful creative tool.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper blue ai-glow"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Smart Chat AI</h3>
+                    <p>An AI-driven chatbot that engages in natural, contextual conversation with your members — it's
+                        uncannily clever.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up">
+                    <div class="icon-wrapper cyan"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <h3>Dynamic Voice</h3>
+                    <p>Allow users to create their own temporary voice channels on-the-fly — never deal with empty,
+                        cluttered VC lists again.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:100ms">
+                    <div class="icon-wrapper orange"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Server Analytics</h3>
+                    <p>Get meaningful insights into your server's growth, active members, and message trends with
+                        beautiful visual data.</p>
+                </div>
+                <div class="feature-card glass-panel reveal fade-up" style="transition-delay:200ms">
+                    <div class="icon-wrapper yellow"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Temp Roles</h3>
+                    <p>Assign roles that automatically expire after a set duration — perfect for event access, giveaway
+                        winners, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Spotlight Section -->
+    <section id="ai" class="ai-section reveal">
+        <div class="ai-content">
+            <div class="ai-badge"><i class="fa-solid fa-sparkles"></i> Powered by AI</div>
+            <h2>Spark <span class="gradient-text">Creativity</span> Like Never Before</h2>
+            <p>Rextro puts cutting-edge artificial intelligence directly in your server. Not gimmicks — genuinely
+                useful, community-changing AI tools.</p>
+            <div class="ai-features-row">
+                <div class="ai-feature-item glass-panel">
+                    <div class="icon-wrapper purple ai-glow big-icon"><i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>AI Image Generation</h3>
+                    <p>Use <code>/imagine</code> to open Rextro's Image Studio — choose from 6 distinct art styles and
+                        generate stunning 1024×1024 images in seconds.</p>
+                    <ul class="feature-list-small">
+                        <li><i class="fa-solid fa-check"></i> 6 styles: Artistic, Realistic, Fantasy, Sci-Fi, Anime,
+                            Sketch</li>
+                        <li><i class="fa-solid fa-check"></i> Powered by Pollinations AI</li>
+                        <li><i class="fa-solid fa-check"></i> 🔄 Regenerate button for variations</li>
+                    </ul>
+                </div>
+                <div class="ai-feature-item glass-panel">
+                    <div class="icon-wrapper blue ai-glow big-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Smart Chat AI</h3>
+                    <p>Powered by <strong>Google Gemini 2.5-flash</strong> — holds full multi-turn conversation history
+                        per channel, adapts tone and length to match the user.</p>
+                    <ul class="feature-list-small">
+                        <li><i class="fa-solid fa-check"></i> Gemini 2.5-flash model</li>
+                        <li><i class="fa-solid fa-check"></i> Per-channel conversation memory</li>
+                        <li><i class="fa-solid fa-check"></i> @mention the bot anywhere</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AutoMod Section -->
+    <section id="automod" class="automod-section">
+        <div class="automod-container reveal">
+            <div class="automod-content">
+                <div class="category-label blue" style="margin-bottom:1.5rem; display:inline-flex;">
+                    <i class="fa-solid fa-shield-halved"></i> Guard Your Gates
+                </div>
+                <h2>Advanced <span class="gradient-text">Auto-Moderation</span> — 24/7</h2>
+                <p>Not a single raid, scam link, or spam wave stands a chance. Rextro's AutoMod runs silently in the
+                    background, protecting your members around the clock.</p>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check-circle"></i> <strong>Content Control:</strong> Filters banned words,
+                        excess caps, duplicate text, and emoji spam.</li>
+                    <li><i class="fa-solid fa-shield-virus"></i> <strong>Anti-Raid & Spam:</strong> Stop mass mentions,
+                        malicious links, and unauthorized invite abuse instantly.</li>
+                    <li><i class="fa-solid fa-fish-fins"></i> <strong>Anti-Phishing:</strong> Real-time detection and
+                        auto-removal of known phishing and scam URLs.</li>
+                    <li><i class="fa-solid fa-broom"></i> <strong>Sanitization:</strong> Block glitchy "zalgo" text,
+                        username hoisting, and ghost pings.</li>
+                    <li><i class="fa-solid fa-gavel"></i> <strong>Auto-Punishment:</strong> Automatically escalate to
+                        timeouts or kicks for repeat offenders.</li>
+                </ul>
+            </div>
+            <div class="automod-visual glow-container">
+                <div class="mockup-window glass-panel automod-panel">
+                    <div class="mockup-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="mockup-title">AutoMod Dashboard</span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="automod-row"><span>Anti-Spam Filter</span>
+                            <div class="toggle active"></div>
+                        </div>
+                        <div class="automod-row"><span>Anti-Phishing Links</span>
+                            <div class="toggle active"></div>
+                        </div>
+                        <div class="automod-row"><span>Block Zalgo Text</span>
+                            <div class="toggle active"></div>
+                        </div>
+                        <div class="automod-row"><span>Anti-Invite (Status)</span>
+                            <div class="toggle active"></div>
+                        </div>
+                        <div class="automod-row"><span>Mass Mention Block</span>
+                            <div class="toggle active"></div>
+                        </div>
+                        <div class="automod-row"><span>Auto-Punish Threshold</span><span class="badge-small">3
+                                Strikes</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Feature Checklist -->
+    <section id="all-features" class="checklist-section reveal">
+        <div class="section-header">
+            <h2>The Complete <span class="gradient-text">Feature List</span></h2>
+            <p>25+ capabilities. All verified directly from the source code.</p>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-col glass-panel">
+                <h3><i class="fa-solid fa-shield-halved"></i> Security & Moderation</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> AutoMod Dashboard (<code>/automod</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Anti-Phishing + Account Age Gate</li>
+                    <li><i class="fa-solid fa-check"></i> Emergency Lockdown (<code>/emergency</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Mod Panel (<code>/modpanel</code> + <code>/purge</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Audit Logging (all server events)</li>
+                    <li><i class="fa-solid fa-check"></i> Message Sniper (<code>/snipe</code>, <code>/editsnipe</code>)
+                    </li>
+                    <li><i class="fa-solid fa-check"></i> Shadow Realm (<code>/banish</code>, <code>/unbanish</code>)
+                    </li>
+                    <li><i class="fa-solid fa-check"></i> Interrogation Room (custom verification)</li>
+                </ul>
+            </div>
+            <div class="checklist-col glass-panel">
+                <h3><i class="fa-solid fa-users"></i> Community & Engagement</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> XP & Levels (<code>/rank</code>, <code>/setup_rewards</code>)
+                    </li>
+                    <li><i class="fa-solid fa-check"></i> Welcome Banner Images (<code>/test_welcome</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Role Panel (<code>/rolepanel</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Suggestions & Polls</li>
+                    <li><i class="fa-solid fa-check"></i> Announcements (<code>/announce</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Staff Applications (<code>/setup_applications</code>)</li>
+                </ul>
+            </div>
+            <div class="checklist-col glass-panel">
+                <h3><i class="fa-solid fa-microchip"></i> Utility & AI</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Smart Chat AI — Gemini 2.5-flash</li>
+                    <li><i class="fa-solid fa-check"></i> AI Image Studio — Pollinations AI</li>
+                    <li><i class="fa-solid fa-check"></i> Support Tickets (<code>/setup_tickets</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Temp Roles (<code>/temprole</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Dynamic Voice (<code>/setup_voice</code>)</li>
+                    <li><i class="fa-solid fa-check"></i> Server Analytics (<code>/analytics</code>)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials reveal">
+        <div class="section-header">
+            <h2>Trusted by <span class="gradient-text">Top Communities</span></h2>
+            <p>See what server owners are saying about Rextro.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass-panel" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="review-text">"The AI Image Generator and Smart Chat completely transformed our community's
+                    vibe. Members can't stop using `/imagine` — it's addictive."</p>
+                <div class="reviewer-info">
+                    <div class="avatar blue"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                        <h4>Sarah L.</h4>
+                        <p class="role">Gaming Community Owner (50k+)</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-panel" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="review-text">"The AutoMod and Anti-Phish alone replaced 3 other bots. Since we added Rextro,
+                    we haven't had a single successful raid or scam link get through."</p>
+                <div class="reviewer-info">
+                    <div class="avatar purple"><i class="fa-solid fa-user-ninja"></i></div>
+                    <div>
+                        <h4>Marcus D.</h4>
+                        <p class="role">Lead Moderator, Verified Server</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-panel" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="review-text">"The Levels System and Welcome Images made onboarding feel premium. Our member
+                    retention improved massively after adding the XP system."</p>
+                <div class="reviewer-info">
+                    <div class="avatar green"><i class="fa-solid fa-user-secret"></i></div>
+                    <div>
+                        <h4>Elena R.</h4>
+                        <p class="role">Discord Partner & Community Builder</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="about-container reveal">
+            <div class="about-image glass-panel">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <h3>Adnan T S</h3>
+                <p class="role">Creator & Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Behind the <span class="gradient-text">Rextro</span> Vision</h2>
+                <p>Hello! I'm <strong>Adnan T S</strong>, a passionate developer dedicated to building seamless,
+                    powerful tools for online communities. I built Rextro out of a genuine frustration with traditional,
+                    text-heavy moderation systems and the need to juggle 5+ bots.</p>
+                <p>My goal is to provide server owners with an intuitive, UI-driven powerhouse that combines
+                    <strong>robust security, community-building tools, and cutting-edge AI</strong> into a single,
+                    beautiful package.
+                </p>
+                <p>Constantly updated and closely monitored — Rextro represents the next generation of Discord server
+                    management.</p>
+                <a href="docs.html" class="btn btn-secondary" style="margin-top: 1rem;">
+                    Read Documentation <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+        <div class="cta-box glass-panel">
+            <div class="cta-badge"><i class="fa-solid fa-crown"></i> Why settle for less?</div>
+            <h2>Ready to Build Your Empire?</h2>
+            <p>Join thousands of server owners who chose the all-in-one solution. It's time to upgrade.</p>
+            <div class="cta-actions">
+                <a href="#" class="btn btn-primary btn-large glow-btn"><i class="fa-brands fa-discord"></i> Add to
+                    Discord — It's Free</a>
+                <a href="docs.html" class="btn btn-secondary btn-large">Explore Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Rextro Logo" class="brand-logo-footer"> Rextro
+            </div>
+            <div class="footer-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#ai">AI Tools</a>
+                <a href="docs.html">Documentation</a>
+                <a href="index.html#about">About</a>
+            </div>
+            <p class="copyright">Designed and developed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i>
+                by <strong>Adnan T S</strong></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
