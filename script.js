@@ -70,6 +70,27 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', closeMenu);
     });
 
+    // 4. Docs Sidebar Toggle (mobile)
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const docsSidebar = document.getElementById('docsSidebar');
+
+    if (sidebarToggle && docsSidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            const isOpen = docsSidebar.classList.toggle('open');
+            sidebarToggle.classList.toggle('open', isOpen);
+            sidebarToggle.querySelector('span').textContent = isOpen ? 'Close navigation' : 'Jump to section';
+        });
+
+        // Close sidebar when a doc section link is clicked
+        docsSidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                docsSidebar.classList.remove('open');
+                sidebarToggle.classList.remove('open');
+                sidebarToggle.querySelector('span').textContent = 'Jump to section';
+            });
+        });
+    }
+
     // 3. Scroll Reveal Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
 

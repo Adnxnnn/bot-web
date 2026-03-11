@@ -1018,6 +1018,11 @@ footer {
     margin-left: 0.5rem;
 }
 
+/* Mobile sidebar toggle — hidden on desktop */
+.sidebar-toggle {
+    display: none;
+}
+
 .docs-layout {
     display: flex;
     flex: 1;
@@ -1077,9 +1082,14 @@ footer {
 
 .docs-main {
     flex: 1;
-    padding: 3rem 4rem;
+    padding: 3rem 3rem;
     border-radius: 16px;
     min-height: calc(100vh - 120px);
+}
+
+/* Ensure all doc sections have proper scroll offset */
+.docs-main section {
+    scroll-margin-top: 100px;
 }
 
 .docs-content>h1 {
@@ -1199,6 +1209,8 @@ footer {
 .code-block pre {
     padding: 1.25rem;
     overflow-x: auto;
+    word-break: break-word;
+    white-space: pre-wrap;
 }
 
 .code-block code {
@@ -1206,6 +1218,7 @@ footer {
     padding: 0;
     border: none;
     color: var(--text-main);
+    font-size: 0.88rem;
 }
 
 .docs-table {
@@ -1387,6 +1400,7 @@ footer {
     .docs-layout {
         flex-direction: column;
         padding: 1rem;
+        gap: 0;
     }
 
     .docs-sidebar {
@@ -1394,6 +1408,43 @@ footer {
         height: auto;
         position: static;
         flex: none;
+        display: none; /* hidden by default on tablet — toggle reveals it */
+        margin-bottom: 1rem;
+    }
+
+    .docs-sidebar.open {
+        display: block;
+    }
+
+    /* Show the toggle button on tablet and below */
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        background: var(--bg-panel);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        font-family: var(--font-sans);
+        font-weight: 500;
+        cursor: pointer;
+        margin-bottom: 0.75rem;
+        transition: all var(--transition-fast);
+        backdrop-filter: blur(10px);
+    }
+
+    .sidebar-toggle:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .sidebar-toggle.open {
+        color: var(--primary);
+        border-color: var(--primary);
+        background: rgba(59, 130, 246, 0.05);
     }
 
     .docs-main {
@@ -1625,21 +1676,40 @@ footer {
 
     /* --- Docs --- */
     .docs-main {
-        padding: 1.5rem 1rem;
+        padding: 1.25rem 1rem;
     }
 
-    .docs-content > h1 {
-        font-size: 2rem;
+    .docs-main h1 {
+        font-size: 1.9rem;
     }
 
-    .docs-content h2 {
-        font-size: 1.5rem;
+    .docs-main h2 {
+        font-size: 1.4rem;
+        flex-wrap: wrap;
+    }
+
+    .docs-category-header {
+        font-size: 0.95rem;
+        padding: 0.65rem 1rem;
     }
 
     .docs-table th,
     .docs-table td {
-        padding: 0.65rem 0.75rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 0.65rem;
+        font-size: 0.88rem;
+    }
+
+    .code-block pre {
+        font-size: 0.82rem;
+    }
+
+    .alert {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .alert i {
+        font-size: 1.1rem;
     }
 }
 
@@ -1671,6 +1741,49 @@ footer {
 
     .stat-number {
         font-size: 2.1rem;
+    }
+
+    /* --- Docs small phone --- */
+    .docs-layout {
+        padding: 0.75rem;
+    }
+
+    .sidebar-toggle {
+        font-size: 0.88rem;
+        padding: 0.65rem 1rem;
+    }
+
+    .docs-main {
+        padding: 1rem 0.75rem;
+    }
+
+    .docs-main h1 {
+        font-size: 1.6rem;
+    }
+
+    .docs-main h2 {
+        font-size: 1.25rem;
+    }
+
+    .docs-table-wrap {
+        border-radius: 8px;
+    }
+
+    .docs-table th,
+    .docs-table td {
+        padding: 0.5rem;
+        font-size: 0.82rem;
+        word-break: break-word;
+    }
+
+    .code-block pre {
+        padding: 0.9rem;
+        font-size: 0.78rem;
+    }
+
+    .status {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.5rem;
     }
 }
 
